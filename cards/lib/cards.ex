@@ -1,11 +1,26 @@
 # compile command, iex -S mix
 defmodule Cards do
   def create_deck do
-    values = ["Ace", "Two", "Three", "Four", "Five"]
+    values = [
+      "Ace",
+      "Two",
+      "Three",
+      "Four",
+      "Five",
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine",
+      "Ten",
+      "Jack",
+      "Queen",
+      "King"
+    ]
+
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
     # Solution 1
-    # cards = for value <- values do 
+    # cards = for value <- values do
     #   for suit <- suits do
     #     "#{value} of #{suit}"
     #   end
