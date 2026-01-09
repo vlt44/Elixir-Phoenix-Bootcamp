@@ -18,7 +18,7 @@ Accepts an array of cards and returns a shuffled version.
 
 Creates a hand of cards from the deck.
 
-Typically removes and returns a subset of cards from the deck.
+Removes and returns a subset of cards from the deck.
 
 `contains?`
 
@@ -39,6 +39,16 @@ Loads a collection of cards from the local machine.
 Restores a previously saved deck or hand.
 
 ## Identicons
+
+`hash_input`
+
+Compute MD5 hash of string.
+
+List of number based on the string.
+
+`pick_color`
+
+First three elements of hash list represent the RBG values for identicon.
 
 ## Authentication
 
