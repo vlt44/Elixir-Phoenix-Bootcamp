@@ -50,6 +50,10 @@ List of number based on the string.
 
 First three elements of hash list represent the RBG values for identicon.
 
+`build_grid`
+
+Returns an array of subarrays, where each subarray represents a single row of the grid
+
 ## Authentication
 
 ## Transforming Requests with Plugs
