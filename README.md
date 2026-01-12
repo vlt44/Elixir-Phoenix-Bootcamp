@@ -54,6 +54,12 @@ First three elements of hash list represent the RBG values for identicon.
 
 Returns an array of subarrays, where each subarray represents a single row of the grid
 
+pass in collection and function that is called with every elelment in the list
+
+`mirror_row`
+
+Mirror an individual row
+
 ## Authentication
 
 ## Transforming Requests with Plugs
