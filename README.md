@@ -60,6 +60,28 @@ pass in collection and function that is called with every elelment in the list
 
 Mirror an individual row
 
+`filter_odd_squares`
+
+Filtering process for determing which square should have color
+
+if the number odd remove from the record, if even it will have color
+
+`build_pixel_map`
+
+convert grid indices into 50×50 rectangle coordinates and stores it in the image struct
+
+`draw_image`
+
+Creates a 250×250 image by drawing colored rectangles from the pixel map and rendering it to binary image data
+
+`save_image`
+
+Writes the generated image binary to a PNG file named after the input.
+
+### Demo
+
+![demo](/identicons/vlt44.png)
+
 ## Authentication
 
 ## Transforming Requests with Plugs
