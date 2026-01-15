@@ -8,6 +8,7 @@
       {assigns[:page_title]}
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
     </script>
     <script>
@@ -31,6 +32,13 @@
     </script>
   </head>
   <body>
+  <nav class="light-blue">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">
+      Discussions
+      </a>
+    </div>
+  </nav>
     {@inner_content}
   </body>
 </html>
