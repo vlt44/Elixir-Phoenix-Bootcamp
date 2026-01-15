@@ -40,9 +40,7 @@ Restores a previously saved deck or hand.
 
 ### Demo
 
-<video src="/cards/lib/cardsDemo.mp4" controls title="Video Demo">
-
-</video>
+<img src="./cards/lib/cardsDemo.gif" width="600" height="auto" alt="Cards Demo" />
 
 ## Identicons
 
