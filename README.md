@@ -56,27 +56,27 @@ First three elements of hash list represent the RBG values for identicon.
 
 `build_grid`
 
-Returns an array of subarrays, where each subarray represents a single row of the grid
+Returns an array of subarrays, where each subarray represents a single row of the grid.
 
-pass in collection and function that is called with every elelment in the list
+pass in collection and function that is called with every elelment in the list.
 
 `mirror_row`
 
-Mirror an individual row
+Mirror an individual row.
 
 `filter_odd_squares`
 
-Filtering process for determing which square should have color
+Filtering process for determing which square should have color.
 
-if the number odd remove from the record, if even it will have color
+if the number odd remove from the record, if even it will have color.
 
 `build_pixel_map`
 
-convert grid indices into 50×50 rectangle coordinates and stores it in the image struct
+convert grid indices into 50×50 rectangle coordinates and stores it in the image struct.
 
 `draw_image`
 
-Creates a 250×250 image by drawing colored rectangles from the pixel map and rendering it to binary image data
+Creates a 250×250 image by drawing colored rectangles from the pixel map and rendering it to binary image .
 
 `save_image`
 
@@ -85,6 +85,20 @@ Writes the generated image binary to a PNG file named after the input.
 ### Demo
 
 ![demo](/identicons/vlt44.png)
+
+## Discuss
+
+Users can sign in and post a topic for discussion
+
+Creating a New Topic
+
+- Provide a route the user can visit to create a topic.
+- Add a new route in the router that maps the URL to a controller action.
+- Create a new controller method to handle the request.This action is responsible for rendering the form and handling user input.
+- Build a new template that displays the topic creation form.
+- Create a Topic model to translate form data into a structure that can be saved to the database.
+- Existing controllers and views are related to Page.
+- Create a dedicated Topics controller and views to handle all Topic-related functionality.
 
 ## Authentication
 
