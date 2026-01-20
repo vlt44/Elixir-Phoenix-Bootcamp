@@ -48,6 +48,11 @@ defmodule DiscussWeb do
     end
   end
 
+  def view do
+    quote do
+    end
+  end
+
   def live_view do
     quote do
       use Phoenix.LiveView
