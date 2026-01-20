@@ -1,5 +1,5 @@
 defmodule Discuss.TopicController do
-  use Discuss.Web, :controller
+  use DiscussWeb, :controller
   alias Discuss.Topic
 
   def new(conn, params) do
