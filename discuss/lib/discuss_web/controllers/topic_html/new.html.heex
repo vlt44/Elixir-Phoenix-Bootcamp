@@ -1,9 +1,6 @@
-<.form :let={f} for={@changeset} action={~p"/topics"}>
-  <div>
-    <.input field={f[:title]} label="Title" />
-  </div>
-
-  <div>
-    <.button>Submit</.button>
-  </div>
-</.form>
+<div style="padding: 50px;">
+  <.form :let={f} for={@changeset} action={~p"/topics"}>
+      <.input field={f[:title]} placeholder="Title" />
+      <.button>Save Topic</.button>
+  </.form>
+</div>
