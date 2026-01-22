@@ -1,6 +1,7 @@
 <div style="padding: 50px;">
   <.form :let={f} for={@changeset} action={~p"/topics"}>
       <.input field={f[:title]} placeholder="Title" />
+      <.error_tag error={f[:title].errors} />
       <.button>Save Topic</.button>
   </.form>
 </div>
