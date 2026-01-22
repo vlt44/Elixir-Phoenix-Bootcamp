@@ -1,20 +1,10 @@
-<.form
-  for={to_form(@changeset)}
-  action={~p"/topics"}
-  method="post"
->
-  <div class="form-group">
-    <.input
-      field="title"
-      placeholder="Title"
-      class="form-control"
-      name="topic[title]"
-    />
-  </div>
-
-  <div>
-    <.button class="btn btn-primary">
-      Save Topic
-    </.button>
-  </div>
-</.form>
+<div>
+  <.form for={@changeset} action={~p"/topics"}>
+    <.input field={@changeset[:title]} />
+  </.form>
+</div>
+<div>
+  <.button class="btn btn-primary">
+    Save Topic
+  </.button>
+</div>
