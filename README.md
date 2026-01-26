@@ -90,15 +90,20 @@ Writes the generated image binary to a PNG file named after the input.
 
 Users can sign in and post a topic for discussion
 
-Creating a New Topic
+| Functionality                            | Routes                | Controller Function |
+| ---------------------------------------- | --------------------- | ------------------- |
+| See the form to create a new topic       | GET `/topics/new`     | `new`               |
+| Submit the form to create a topic        | POST `/topics`        | `create`            |
+| Get a list of all topics                 | GET `/topics`         | `index`             |
+| Delete a topic with ID                   | DELETE `/topics/id`   | `delete`            |
+| See the form to update an existing topic | GET `/topics/id/edit` | `edit`              |
+| Submit the form to update a topic        | PUT `/topics/id`      | `update`            |
 
-- Provide a route the user can visit to create a topic.
-- Add a new route in the router that maps the URL to a controller action.
-- Create a new controller method to handle the request.This action is responsible for rendering the form and handling user input.
-- Build a new template that displays the topic creation form.
-- Create a Topic model to translate form data into a structure that can be saved to the database.
-- Existing controllers and views are related to Page.
-- Create a dedicated Topics controller and views to handle all Topic-related functionality.
+### Demo
+
+![Home Page with List](/discuss/assets/images/TopicsListPage.png)
+![Page to Create Topic](/discuss/assets/images/newTopicsPage.png)
+![Database Table](/discuss/assets/images/dbTable.png)
 
 ## Authentication
 
