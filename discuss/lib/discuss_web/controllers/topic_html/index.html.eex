@@ -11,7 +11,8 @@
 </div>
 
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large waves-effect waves-light red">
-    <i class="large material-icons">add</i>
-  </a>
+<.link navigate={~p"/topics/new"}>
+  <i class="large material-icons btn-floating btn-large waves-effect waves-light red">add</i>
+</.link>
+
 </div>
