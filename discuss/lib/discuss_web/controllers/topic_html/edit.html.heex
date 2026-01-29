@@ -1,5 +1,5 @@
 <div style="padding: 50px;">
-  <.form :let={f} for={@changeset} action={~p"/topics/:id/edit"}>
+  <.form :let={f} for={@changeset} method="put" action={~p"/topics/#{@topic.id}"}>
       <.input field={f[:title]} placeholder="Title" errors={f[:field].errors} />
       <.button>Update</.button>
   </.form>
