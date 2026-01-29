@@ -33,4 +33,18 @@ defmodule DiscussWeb.TopicController do
 
     render(conn, :edit, changeset: changeset, topic: topic)
   end
+
+  def update(conn, %{"id" => topic_id, "topic" => topic}) do
+    changeset = Repo.get(Topic, topic_id) |> Topic.changeset(topic)
+
+    case Repo.update(changeset) do
+      {:ok, _topic} ->
+        conn
+        |> put_flash(:info, "Topic updated successfully.")
+        |> redirect(to: ~p"/")
+
+      {:error, changeset} ->
+        render(conn, :edit, changeset: changeset)
+    end
+  end
 end
