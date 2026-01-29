@@ -101,9 +101,10 @@ Users can sign in and post a topic for discussion
 
 ### Demo
 
-![Home Page with List](/discuss/assets/images/TopicsListPage.png)
-![Page to Create Topic](/discuss/assets/images/newTopicsPage.png)
 ![Database Table](/discuss/assets/images/dbTable.png)
+![Home Page with List](/discuss/assets/images/TopicsListPage.png)
+![Create Topic Form](/discuss/assets/images/newTopicsPage.png)
+![Edit Topic Form](/discuss/assets/images/TopicsEditForm.png)
 
 ## Authentication
 
