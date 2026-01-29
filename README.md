@@ -103,7 +103,7 @@ Users can sign in and post a topic for discussion
 
 ![Database Table](/discuss/assets/images/dbTable.png)
 ![Home Page with List](/discuss/assets/images/TopicsListPage.png)
-![Create Topic Form](/discuss/assets/images/newTopicsPage.png)
+![Create Topic Form](/discuss/assets/images/newTopicsForm.png)
 ![Edit Topic Form](/discuss/assets/images/TopicsEditForm.png)
 
 ## Authentication
