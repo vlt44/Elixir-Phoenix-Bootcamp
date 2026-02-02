@@ -6,10 +6,8 @@
       <li class="collection-item">
         <%= topic.title %>
         <div class="right">
-          <.link navigate={~p"/topics/edit"}>
-            <i class="material-icons btn-floating btn-large waves-effect waves-light red" style="align-content: center;">
+          <.link navigate={~p"/topics/#{topic.id}/edit"}>
             edit
-            </i>
           </.link>
         </div>
       </li>
