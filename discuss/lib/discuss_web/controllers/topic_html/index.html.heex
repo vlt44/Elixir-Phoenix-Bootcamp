@@ -9,6 +9,18 @@
           <.link navigate={~p"/topics/#{topic.id}/edit"}>
             edit
           </.link>
+          <div class="right">
+            <.link navigate={~p"/topics/#{topic.id}/edit"}>edit</.link>
+              <.form for={%{}} action={~p"/topics/#{topic.id}"} method="delete" style="display: inline">
+                <.button
+                  type="submit"
+                  class="red-text"
+                  style="background: none; border: none; padding: 0; cursor: pointer;"
+                >
+                  delete
+                </.button>
+              </.form>
+            </div>
         </div>
       </li>
     <% end %>
