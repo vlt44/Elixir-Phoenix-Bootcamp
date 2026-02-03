@@ -1,5 +1,12 @@
 import Config
 
+Dotenvy.source!(".env")
+
+# Load .env file
+config :discuss, :github_oauth,
+  client_id: System.fetch_env!("GITHUB_CLIENT_ID"),
+  client_secret: System.fetch_env!("GITHUB_CLIENT_SECRET")
+
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
