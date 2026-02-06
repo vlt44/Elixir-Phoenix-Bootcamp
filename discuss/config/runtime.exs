@@ -1,8 +1,14 @@
 import Config
+import Dotenvy
 
-Dotenvy.source!(".env")
+if File.exists?(".env") do
+  source!(".env")
+  IO.inspect(System.get_env("GITHUB_CLIENT_ID"), label: "LOADED CLIENT ID")
+  IO.inspect(System.get_env("GITHUB_CLIENT_SECRET"), label: "LOADED CLIENT SECRET")
+else
+  IO.warn("No .env file found")
+end
 
-# Load .env file
 config :discuss, :github_oauth,
   client_id: System.fetch_env!("GITHUB_CLIENT_ID"),
   client_secret: System.fetch_env!("GITHUB_CLIENT_SECRET")
