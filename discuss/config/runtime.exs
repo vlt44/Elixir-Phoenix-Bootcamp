@@ -1,15 +1,19 @@
 import Config
-import Dotenvy
 
-if File.exists?(".env") do
-  source!(".env")
-  IO.inspect(System.get_env("GITHUB_CLIENT_ID"), label: "LOADED CLIENT ID")
-  IO.inspect(System.get_env("GITHUB_CLIENT_SECRET"), label: "LOADED CLIENT SECRET")
-else
-  IO.warn("No .env file found")
+env_path = Path.expand("../.env", __DIR__)
+
+if File.exists?(env_path) do
+  File.read!(env_path)
+  |> String.split("\n", trim: true)
+  |> Enum.each(fn line ->
+    case String.split(line, "=", parts: 2) do
+      [key, value] -> System.put_env(key, String.trim(value))
+      _ -> :ok
+    end
+  end)
 end
 
-config :discuss, :github_oauth,
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.fetch_env!("GITHUB_CLIENT_ID"),
   client_secret: System.fetch_env!("GITHUB_CLIENT_SECRET")
 
