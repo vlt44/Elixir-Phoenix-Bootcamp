@@ -67,8 +67,7 @@ defmodule Discuss.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
       {:ueberauth, "~> 0.3"},
-      {:ueberauth_github, "~> 0.4"},
-      {:dotenvy, "~> 0.8.0"}
+      {:ueberauth_github, "~> 0.4"}
     ]
   end
 
