@@ -4,11 +4,19 @@ defmodule DiscussWeb.Plugs.SetUser do
 
   alias DiscussWeb.Repo
   alias DiscussWeb.User
-  alias DiscussWeb.Router.Helpers, as: Routes
 
   def init(_params) do
   end
 
   def call(conn, _params) do
+    user_id = get_session(conn, :user_id)
+
+    cond do
+      user_id && user = Repo.get(User, user_id) ->
+        assign(conn, :user, user)
+
+      true ->
+        assign(conn, :user, nil)
+    end
   end
 end
