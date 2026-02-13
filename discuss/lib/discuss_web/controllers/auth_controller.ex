@@ -22,16 +22,16 @@ defmodule DiscussWeb.AuthController do
         conn
         |> put_flash(:info, "Welcome back!")
         |> put_session(:user_id, user.id)
-        |> redirect(to: topic_path(conn, :index))
+        |> redirect(to: ~p"/topics")
 
       {:error, _reason} ->
         conn
         |> put_flash(:error, "Error signing you in.")
-        |> redirect(to: topic_path(conn, :index))
+        |> redirect(to: ~p"/topics")
     end
   end
 
-  defp insert_or_update_user(conn, changeset) do
+  defp insert_or_update_user(changeset) do
     case Repo.get_by(User, email: changeset.changes.email) do
       nil -> Repo.insert(changeset)
       user -> {:ok, user}
