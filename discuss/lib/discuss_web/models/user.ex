@@ -1,5 +1,6 @@
 defmodule DiscussWeb.User do
-  use DiscussWeb, :model
+  use Ecto.Schema
+  import Ecto.Changeset
 
   schema "users" do
     field(:email, :string)
