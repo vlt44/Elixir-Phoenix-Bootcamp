@@ -38,6 +38,17 @@
       <a href="/" class="brand-logo" >
       Discussions
       </a>
+      <ul class="right">
+        <%= if @conn.assigns[:user] do %>
+          <li>Logout</li>
+        <% else %>
+          <li>
+            <.link href={~p"/auth/github"}>
+              Sign in with Github
+            </.link>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </nav>
     {@inner_content}
