@@ -3,6 +3,7 @@ defmodule DiscussWeb.AuthController do
   plug(Ueberauth)
 
   alias DiscussWeb.User
+  alias Discuss.Repo
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_params = %{
