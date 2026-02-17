@@ -1,4 +1,4 @@
-defmodule DiscussWeb.User do
+defmodule Discuss.User do
   use Ecto.Schema
   import Ecto.Changeset
 
