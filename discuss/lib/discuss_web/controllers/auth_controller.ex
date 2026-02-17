@@ -2,19 +2,26 @@ defmodule DiscussWeb.AuthController do
   use DiscussWeb, :controller
   plug(Ueberauth)
 
-  alias DiscussWeb.User
+  alias Discuss.User
   alias Discuss.Repo
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    user_params = %{
-      token: auth.credentials.token,
-      email: auth.info.email,
-      provider: to_string(auth.provider)
-    }
+    case auth.info.email do
+      nil ->
+        conn
+        |> put_flash(:error, "GitHub did not provide an email")
+        |> redirect(to: ~p"/")
 
-    changeset = User.changeset(%User{}, user_params)
+      email ->
+        user_params = %{
+          token: auth.credentials.token,
+          email: email,
+          provider: to_string(auth.provider)
+        }
 
-    signin(conn, changeset)
+        changeset = User.changeset(%User{}, user_params)
+        signin(conn, changeset)
+    end
   end
 
   defp signin(conn, changeset) do
