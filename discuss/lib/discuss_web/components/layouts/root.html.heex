@@ -41,7 +41,7 @@
       <ul class="right">
         <%= if @conn.assigns[:user] do %>
           <li>
-            <.link to={~p"/auth/signout"}>Sign Out</.link>
+            <.link href={~p"/auth/signout"}>Sign Out</.link>
           </li>
         <% else %>
           <li>
