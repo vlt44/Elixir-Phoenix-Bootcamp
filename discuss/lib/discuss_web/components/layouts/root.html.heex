@@ -53,6 +53,11 @@
       </ul>
     </div>
   </nav>
+    <%= for {type, message} <- @flash do %>
+      <p class={"alert alert-#{type}"}>
+        <%= message %>
+      </p>
+    <% end %>
     {@inner_content}
   </body>
 </html>
