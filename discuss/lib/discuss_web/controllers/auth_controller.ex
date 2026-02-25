@@ -10,7 +10,7 @@ defmodule DiscussWeb.AuthController do
       nil ->
         conn
         |> put_flash(:error, "GitHub did not provide an email")
-        |> redirect(to: ~p"/")
+        |> redirect(to: ~p"/topics")
 
       email ->
         user_params = %{
