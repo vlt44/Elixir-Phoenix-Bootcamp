@@ -12,8 +12,8 @@ defmodule Discuss.Plugs.RequireAuth do
       conn
     else
       conn
-      |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: Helpers.page_path(conn, :index))
+      |> put_flash(:error, "Please sign in to continue.")
+      |> redirect(to: "/topics")
       |> halt()
     end
   end
