@@ -110,6 +110,9 @@ Users can sign in and post a topic for discussion
 
 ![Signin GIF](/discuss/assets/images/SignIn.gif)
 
+Authorization
+![Authorization GIF](/discuss/assets/images/Authorization.gif)
+
 ## Transforming Requests with Plugs
 
 ## Websockets in Phoenix
