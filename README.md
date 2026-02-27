@@ -106,7 +106,7 @@ Users can sign in and post a topic for discussion
 ![Create Topic Form](/discuss/assets/images/newTopicsForm.png)
 ![Edit Topic Form](/discuss/assets/images/TopicsEditForm.png)
 
-## Authentication
+## Authentication & Authorization
 
 ![Signin GIF](/discuss/assets/images/SignIn.gif)
 
