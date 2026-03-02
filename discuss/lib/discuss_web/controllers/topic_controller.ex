@@ -3,6 +3,7 @@ defmodule DiscussWeb.TopicController do
   alias Discuss.{Repo, Topic}
 
   plug(Discuss.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete])
+  plug(:check_topic_owner when action in [:edit, :update, :delete])
 
   def index(conn, _params) do
     topics = Repo.all(Topic)
@@ -60,5 +61,18 @@ defmodule DiscussWeb.TopicController do
     conn
     |> put_flash(:info, "Topic deleted successfully.")
     |> redirect(to: ~p"/topics")
+  end
+
+  def check_topic_owner(conn, _params) do
+    %{params: %{"id" => topic_id}} = conn
+
+    if Repo.get(Topic, topic_id).user_id == conn.assigns.user.id do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You can't edit that")
+      |> redirect(to: ~p"/topics")
+      |> halt()
+    end
   end
 end
