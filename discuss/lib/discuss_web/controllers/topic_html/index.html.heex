@@ -3,7 +3,9 @@
   <ul class="collection">
     <%= for topic <- @topics do %>
       <li class="collection-item">
-      <%= topic.title %>
+      <.link navigate={~p"/topics/#{topic.id}"} class="blue-text">
+        <%= topic.title %>
+      </.link>
       <%= if @conn.assigns[:user] && @conn.assigns.user.id == topic.user_id do %>
         <div class="right">
           <.link navigate={~p"/topics/#{topic.id}/edit"}>edit</.link>
