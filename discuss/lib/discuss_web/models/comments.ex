@@ -1,5 +1,6 @@
 defmodule Discuss.Comments do
-  use DiscussWeb, :model
+  use Ecto.Schema
+  import Ecto.Changeset
 
   schema "comments" do
     field(:content, :string)
