@@ -1,2 +1,7 @@
 <%= @topic.title %>
-<button id="new-comment">Ping!</button>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   window.createSocket(<%= @topic.id %>)
+})
+ 
+</script>
