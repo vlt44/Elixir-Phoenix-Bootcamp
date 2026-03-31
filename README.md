@@ -11,7 +11,7 @@ This project is based on course material originally built on older Phoenix versi
 - Component-based layouts
 - Updated plug and router patterns
 
-## Cards
+## Cards App
 
 A simple Elixir module for working with a deck of cards.
 
