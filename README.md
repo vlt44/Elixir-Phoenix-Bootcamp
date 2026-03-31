@@ -198,7 +198,7 @@ Implements a real-time commenting system using Phoenix Channels.
 
 **Functionality**
 
-| Functions                                | Routes                | Controller Function |
+|                                          | Routes                | Controller Function |
 | ---------------------------------------- | --------------------- | ------------------- |
 | See the form to create a new topic       | GET `/topics/new`     | `new`               |
 | Submit the form to create a topic        | POST `/topics`        | `create`            |
