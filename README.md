@@ -123,7 +123,7 @@ Writes the generated image binary to a PNG file named after the input.
 
 A full-stack web application for creating and discussing topics with real-time comments.
 
-### Tech Stack
+**Tech Stack**
 
 - Elixir
 - Phoenix Framework
@@ -132,45 +132,60 @@ A full-stack web application for creating and discussing topics with real-time c
 - JavaScript (client socket handling)
 - Materialize CSS
 
-Setup
+**Setup**
+
 Prerequisites
-Elixir
-Erlang
-PostgreSQL
+
+- Elixir
+- Erlang
+- PostgreSQL
 
 Install Dependencies
+
+```
 mix deps.get
 cd assets && npm install && cd ..
+```
+
 Setup Database
+
+```
 mix ecto.create
 mix ecto.migrate
+```
+
 Run Server
+
+```
 mix phx.server
+```
 
 Visit:
 
+```
 http://localhost:4000
+```
 
 ### Features
 
-#### Authentication (GitHub OAuth)
+**Authentication (GitHub OAuth)**
 
 - Sign in with GitHub using Ueberauth
 - Session-based authentication
 - Persistent users in database
 
-#### Topics CRUD
+**Topics CRUD**
 
 - Create, edit, update, and delete topics
 - Restrict actions to authenticated users
 - Authorization via custom plugs
 
-#### Flash Messaging
+**Flash Messaging**
 
 - Success and error messages using Phoenix flash
 - Integrated with modern HEEx layout
 
-#### Real-Time Comments (WebSockets)
+**Real-Time Comments (WebSockets)**
 
 Implements a real-time commenting system using Phoenix Channels.
 
@@ -181,7 +196,9 @@ Implements a real-time commenting system using Phoenix Channels.
 - UI updates instantly without page refresh
 - Displays comment authors alongside content
 
-| Functionality                            | Routes                | Controller Function |
+**Functionality**
+
+| Functions                                | Routes                | Controller Function |
 | ---------------------------------------- | --------------------- | ------------------- |
 | See the form to create a new topic       | GET `/topics/new`     | `new`               |
 | Submit the form to create a topic        | POST `/topics`        | `create`            |
@@ -192,9 +209,5 @@ Implements a real-time commenting system using Phoenix Channels.
 
 ### Demo
 
-![Database Table](/discuss/assets/images/dbTable.png)
-![Home Page with List](/discuss/assets/images/TopicsListPage.png)
-![Create Topic Form](/discuss/assets/images/newTopicsForm.png)
-![Edit Topic Form](/discuss/assets/images/TopicsEditForm.png)
 ![Signin GIF](/discuss/assets/images/SignIn.gif)
 ![Authorization GIF](/discuss/assets/images/Authorization.gif)
