@@ -1,6 +1,28 @@
-# Elixir-Phoenix Projects
+# Elixir Phoenix Bootcamp Projects
 
-## Deck of Cards
+Code and projects built while working through _The Complete Elixir and Phoenix Bootcamp_.
+
+This repository contains multiple applications that demonstrate core Elixir and Phoenix concepts, including functional programming, database interactions with Ecto, authentication, and real-time features using WebSockets.
+
+This project is based on course material originally built on older Phoenix versions. The implementation has been updated to align with modern Phoenix conventions, including:
+
+- HEEx templates
+- Verified routes (~p)
+- Component-based layouts
+- Updated plug and router patterns
+
+## Cards
+
+A simple Elixir module for working with a deck of cards.
+
+**Concepts:**
+
+- Lists & pattern matching
+- Enum module
+- File I/O
+- Functional composition
+
+**Functionality:**
 
 `create_deck`
 
@@ -42,7 +64,18 @@ Restores a previously saved deck or hand.
 
 <img src="./cards/lib/cardsDemo.gif" width="600" height="auto" alt="Cards Demo" />
 
-## Identicons
+## Identicons App
+
+Generates a GitHub-style identicon from a string input.
+
+**Concepts:**
+
+- Structs
+- Binary pattern matching
+- Image generation pipeline
+- Hashing
+
+**Functionality:**
 
 `hash_input`
 
@@ -86,9 +119,67 @@ Writes the generated image binary to a PNG file named after the input.
 
 ![demo](/identicons/vlt44.png)
 
-## Discuss
+## Discuss App
 
-Users can sign in and post a topic for discussion
+A full-stack web application for creating and discussing topics with real-time comments.
+
+### Tech Stack
+
+- Elixir
+- Phoenix Framework
+- Ecto + PostgreSQL
+- Phoenix Channels (WebSockets)
+- JavaScript (client socket handling)
+- Materialize CSS
+
+Setup
+Prerequisites
+Elixir
+Erlang
+PostgreSQL
+
+Install Dependencies
+mix deps.get
+cd assets && npm install && cd ..
+Setup Database
+mix ecto.create
+mix ecto.migrate
+Run Server
+mix phx.server
+
+Visit:
+
+http://localhost:4000
+
+### Features
+
+#### Authentication (GitHub OAuth)
+
+- Sign in with GitHub using Ueberauth
+- Session-based authentication
+- Persistent users in database
+
+#### Topics CRUD
+
+- Create, edit, update, and delete topics
+- Restrict actions to authenticated users
+- Authorization via custom plugs
+
+#### Flash Messaging
+
+- Success and error messages using Phoenix flash
+- Integrated with modern HEEx layout
+
+#### Real-Time Comments (WebSockets)
+
+Implements a real-time commenting system using Phoenix Channels.
+
+- Users join a topic-specific channel
+- Comments are persisted to the database
+- Comments are associated with both users and topics
+- New comments are broadcast to all connected clients
+- UI updates instantly without page refresh
+- Displays comment authors alongside content
 
 | Functionality                            | Routes                | Controller Function |
 | ---------------------------------------- | --------------------- | ------------------- |
@@ -105,14 +196,5 @@ Users can sign in and post a topic for discussion
 ![Home Page with List](/discuss/assets/images/TopicsListPage.png)
 ![Create Topic Form](/discuss/assets/images/newTopicsForm.png)
 ![Edit Topic Form](/discuss/assets/images/TopicsEditForm.png)
-
-## Authentication & Authorization
-
 ![Signin GIF](/discuss/assets/images/SignIn.gif)
-
-Authorization
 ![Authorization GIF](/discuss/assets/images/Authorization.gif)
-
-## Transforming Requests with Plugs
-
-## Websockets in Phoenix
