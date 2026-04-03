@@ -28,8 +28,8 @@ function renderComments(comments) {
     .join('')
 }
 
-function renderComment({ comment }) {
-  const renderedComment = commentTemplate(comment);;
+function renderComment(event) {
+  const renderedComment = commentTemplate(event.comment);
   document.querySelector('.collection').innerHTML += renderedComment;
 }
 
