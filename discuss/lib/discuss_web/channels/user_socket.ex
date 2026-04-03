@@ -1,8 +1,9 @@
 defmodule DiscussWeb.UserSocket do
-  alias ElixirLS.LanguageServer.Plugins.Phoenix
   use Phoenix.Socket
 
   channel("comments:*", DiscussWeb.CommentsChannel)
+
+  transport(:websocket, Phoenix.Transports.WebSocket)
 
   def connect(%{"token" => token}, socket) do
     case Phoenix.Token.verify(socket, "key", token) do
