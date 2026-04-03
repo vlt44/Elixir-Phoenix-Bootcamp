@@ -19,13 +19,11 @@ const createSocket = (topicId) => {
 }
 
 function renderComments(comments) {
-  const renderedComments = comments.map(comment => {
-    return `<li class="collection-item">${comment.content}</li>`
-  });
+  const list = document.querySelector('#comments-list')
 
-   list.innerHTML = comments
+  list.innerHTML = comments
     .map(comment => `<li class="collection-item">${comment.content}</li>`)
-    .join('');
+    .join('')
 }
 
 window.createSocket = createSocket;
