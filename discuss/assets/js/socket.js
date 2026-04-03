@@ -34,7 +34,8 @@ function renderComment(event) {
 }
 
 function commentTemplate(comment) {
-  return `<li class="collection-item">${comment.content}</li>`;
+  let userEmail = comment.user ? comment.user.email : "Anonymous";
+  return `<li class="collection-item">${comment.content} (<em>${userEmail}</em>)</li>`;
 }
 
 window.createSocket = createSocket;
