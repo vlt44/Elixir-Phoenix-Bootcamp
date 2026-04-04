@@ -1,6 +1,6 @@
 import { Socket } from "phoenix"
 
-let socket = new Socket("/socket", {})
+let socket = new Socket("/socket", {params: { token: window.userToken }})
 socket.connect()
 
 const createSocket = (topicId) => {
@@ -24,18 +24,19 @@ function renderComments(comments) {
   const list = document.querySelector('#comments-list')
 
   list.innerHTML = comments
-    .map(comment => `<li class="collection-item">${comment.content}</li>`)
+    .map(comment => commentTemplate(comment))
     .join('')
 }
 
 function renderComment(event) {
   const renderedComment = commentTemplate(event.comment);
-  document.querySelector('.collection').innerHTML += renderedComment;
+  document.querySelector('#comments-list').innerHTML += renderedComment;
 }
 
 function commentTemplate(comment) {
-  let userEmail = comment.user ? comment.user.email : "Anonymous";
-  return `<li class="collection-item">${comment.content} (<em>${userEmail}</em>)</li>`;
+  let content = comment.content;
+  let userInfo = comment.user && comment.user.email ? `(${comment.user.email})` : "Anonymous";
+  return `<li class="collection-item">${content} ${userInfo}</li>`;
 }
 
 window.createSocket = createSocket;
