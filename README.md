@@ -209,9 +209,11 @@ Implements a real-time commenting system using Phoenix Channels.
 
 ### Demo
 
-![Signin GIF](/discuss/assets/images/SignIn.gif)
-![Authorization GIF](/discuss/assets/images/Authorization.gif)
+![Signin GIF](./discuss/assets/images/SignIn.gif)
+![Authorization GIF](./discuss/assets/images/Authorization.gif)
+![Topic GIF](./discuss/assets/images/Topic.gif)
+![Comment GIF](./discuss/assets/images/Comment.gif)
 
 # Course Certificate
 
-![Certificate](/discuss/assets/images/cert.jpg)
+![Certificate](./discuss/assets/images/Authorization.gif)
