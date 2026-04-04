@@ -15,8 +15,16 @@ const createSocket = (topicId) => {
     channel.on(`comments:${topicId}:new`, renderComment);
 
   document.querySelector('button').addEventListener('click', () => {
-    const content = document.querySelector('textarea').value;
-    channel.push("comment:add", { content: content });
+    const textarea = document.querySelector('textarea');
+    const content = textarea.value;
+
+    channel.push("comment:add", { content: content })
+      .receive("ok", () => {
+        textarea.value = "";
+      })
+      .receive("error", (resp) => {
+        console.error("comment:add failed", resp);
+      });
   });
 }
 
