@@ -216,4 +216,4 @@ Implements a real-time commenting system using Phoenix Channels.
 
 # Course Certificate
 
-![Certificate](./discuss/assets/images/Authorization.gif)
+![Certificate](./discuss/assets/images/cert.jpg)
