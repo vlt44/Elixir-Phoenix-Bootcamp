@@ -35,7 +35,7 @@ function renderComment(event) {
 
 function commentTemplate(comment) {
   let content = comment.content;
-  let userInfo = comment.user && comment.user.email ? `(${comment.user.email})` : "Anonymous";
+  let userInfo = comment.user_email ? `(${comment.user_email})` : "Anonymous";
   return `<li class="collection-item">${content} ${userInfo}</li>`;
 }
 

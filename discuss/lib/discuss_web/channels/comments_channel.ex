@@ -11,12 +11,14 @@ defmodule DiscussWeb.CommentsChannel do
       |> Repo.get(topic_id)
       |> Repo.preload(comments: [:user])
 
-    {:ok, %{comments: topic.comments}, assign(socket, :topic, topic)}
+    comments = Enum.map(topic.comments, &comment_payload/1)
+
+    {:ok, %{comments: comments}, assign(socket, :topic, topic)}
   end
 
   def handle_in(name, %{"content" => content}, socket) do
     topic = socket.assigns.topic
-    user_id = socket.assigns.user_id
+    user_id = Map.get(socket.assigns, :user_id)
 
     changeset =
       topic
@@ -25,11 +27,23 @@ defmodule DiscussWeb.CommentsChannel do
 
     case Repo.insert(changeset) do
       {:ok, comment} ->
-        broadcast!(socket, "comments:#{socket.assigns.topic.id}:new", %{comment: comment})
+        comment = Repo.preload(comment, :user)
+
+        broadcast!(socket, "comments:#{socket.assigns.topic.id}:new", %{
+          comment: comment_payload(comment)
+        })
+
         {:reply, :ok, socket}
 
       {:error, _reason} ->
         {:reply, {:error, %{errors: changeset}}, socket}
     end
+  end
+
+  defp comment_payload(comment) do
+    %{
+      content: comment.content,
+      user_email: comment.user && comment.user.email
+    }
   end
 end
