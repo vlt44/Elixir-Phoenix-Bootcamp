@@ -61,7 +61,10 @@ defmodule DiscussWeb.TopicController do
   end
 
   def delete(conn, %{"id" => topic_id}) do
-    _topic = Repo.get!(Topic, topic_id) |> Repo.delete!()
+    topic = Repo.get!(Topic, topic_id)
+
+    Repo.delete_all(Ecto.assoc(topic, :comments))
+    Repo.delete!(topic)
 
     conn
     |> put_flash(:info, "Topic deleted successfully.")
