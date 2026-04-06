@@ -4,10 +4,10 @@ Code and projects built while working through _The Complete Elixir and Phoenix B
 
 This repository contains multiple applications that demonstrate core Elixir and Phoenix concepts, including functional programming, database interactions with Ecto, authentication, and real-time features using WebSockets.
 
-This project is based on course material originally built on older Phoenix versions. The implementation has been updated to align with modern Phoenix conventions, including:
+The original course material was built on older Phoenix versions. This repository has been updated to use modern Phoenix conventions, including:
 
 - HEEx templates
-- Verified routes (~p)
+- Verified routes (`~p`)
 - Component-based layouts
 - Updated plug and router patterns
 
@@ -131,6 +131,20 @@ A full-stack web application for creating and discussing topics with real-time c
 - Phoenix Channels (WebSockets)
 - JavaScript (client socket handling)
 - Materialize CSS
+
+**Dependency & Version Notes**
+
+This project is based on course material originally built with:
+
+- Elixir ~1.6–1.8
+- Phoenix ~1.3–1.4
+- Poison (JSON encoding)
+
+The current implementation has been updated to work with modern versions:
+
+- Elixir 1.18+
+- Phoenix 1.8
+- Jason (JSON encoding)
 
 **Setup**
 
