@@ -1,6 +1,6 @@
 # Elixir Phoenix Bootcamp Projects
 
-Code and projects built while working through [_The Complete Elixir and Phoenix Bootcamp_](udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/).
+Code and projects built while working through [_The Complete Elixir and Phoenix Bootcamp_](https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/).
 
 This repository contains multiple applications that demonstrate core Elixir and Phoenix concepts, including functional programming, database interactions with Ecto, authentication, and real-time features using WebSockets.
 
